@@ -1,0 +1,131 @@
+range_type,subscription_type,price,service_slug,validity_type
+HR,SILVER,0,band-and-dj-artist,Free
+HR,GOLD,5000,band-and-dj-artist,6 Month
+HR,GOLD,10000,band-and-dj-artist,1 Year
+HR,PLATINUM,10000,band-and-dj-artist,6 Month
+HR,PLATINUM,15000,band-and-dj-artist,1 Year
+HR,SILVER,0,astrologer-and-pandit,Free
+HR,GOLD,5000,astrologer-and-pandit,6 Month
+HR,GOLD,10000,astrologer-and-pandit,1 Year
+HR,PLATINUM,10000,astrologer-and-pandit,6 Month
+HR,PLATINUM,15000,astrologer-and-pandit,1 Year
+HR,SILVER,0,anchor,Free
+HR,GOLD,5000,anchor,6 Month
+HR,GOLD,10000,anchor,1 Year
+HR,PLATINUM,10000,anchor,6 Month
+HR,PLATINUM,15000,anchor,1 Year
+HR,SILVER,0,bartenders,Free
+HR,GOLD,5000,bartenders,6 Month
+HR,GOLD,10000,bartenders,1 Year
+HR,PLATINUM,10000,bartenders,6 Month
+HR,PLATINUM,15000,bartenders,1 Year
+HR,SILVER,0,cakes,Free
+HR,GOLD,5000,cakes,6 Month
+HR,GOLD,10000,cakes,1 Year
+HR,PLATINUM,10000,cakes,6 Month
+HR,PLATINUM,15000,cakes,1 Year
+HR,SILVER,0,catering,Free
+HR,GOLD,20000,catering,6 Month
+HR,GOLD,35000,catering,1 Year
+HR,PLATINUM,35000,catering,6 Month
+HR,PLATINUM,50000,catering,1 Year
+HR,SILVER,0,choreographer,Free
+HR,GOLD,10000,choreographer,6 Month
+HR,GOLD,15000,choreographer,1 Year
+HR,PLATINUM,15000,choreographer,6 Month
+HR,PLATINUM,20000,choreographer,1 Year
+HR,SILVER,0,decorators,Free
+HR,GOLD,25000,decorators,6 Month
+HR,GOLD,40000,decorators,1 Year
+HR,PLATINUM,40000,decorators,6 Month
+HR,PLATINUM,55000,decorators,1 Year
+HR,SILVER,0,event-planner,Free
+HR,GOLD,40000,event-planner,6 Month
+HR,GOLD,60000,event-planner,1 Year
+HR,PLATINUM,60000,event-planner,6 Month
+HR,PLATINUM,80000,event-planner,1 Year
+HR,SILVER,0,events-car-rental,Free
+HR,GOLD,5000,event-planner,6 Month
+HR,GOLD,10000,event-planner,1 Year
+HR,PLATINUM,10000,event-planner,6 Month
+HR,PLATINUM,15000,event-planner,1 Year
+HR,SILVER,0,events-packers-and-movers,Free
+HR,GOLD,5000,events-packers-and-movers,6 Month
+HR,GOLD,10000,events-packers-and-movers,1 Year
+HR,PLATINUM,10000,events-packers-and-movers,6 Month
+HR,PLATINUM,15000,events-packers-and-movers,1 Year
+HR,SILVER,0,fashion-designer-and-cloth-store,Free
+HR,GOLD,20000,fashion-designer-and-cloth-store,6 Month
+HR,GOLD,35000,fashion-designer-and-cloth-store,1 Year
+HR,PLATINUM,35000,fashion-designer-and-cloth-store,6 Month
+HR,PLATINUM,50000,fashion-designer-and-cloth-store,1 Year
+HR,SILVER,0,fireworks,Free
+HR,GOLD,5000,fireworks,6 Month
+HR,GOLD,10000,fireworks,1 Year
+HR,PLATINUM,10000,fireworks,6 Month
+HR,PLATINUM,15000,fireworks,1 Year
+HR,SILVER,0,flight-bookings,Free
+HR,GOLD,10000,flight-bookings,6 Month
+HR,GOLD,15000,flight-bookings,1 Year
+HR,PLATINUM,15000,flight-bookings,6 Month
+HR,PLATINUM,20000,flight-bookings,1 Year
+HR,SILVER,0,flowers-and-bouquets,Free
+HR,GOLD,5000,flowers-and-bouquets,6 Month
+HR,GOLD,10000,flowers-and-bouquets,1 Year
+HR,PLATINUM,10000,flowers-and-bouquets,6 Month
+HR,PLATINUM,15000,flowers-and-bouquets,1 Year
+HR,SILVER,0,gift-store,Free
+HR,GOLD,10000,gift-store,6 Month
+HR,GOLD,15000,gift-store,1 Year
+HR,PLATINUM,15000,gift-store,6 Month
+HR,PLATINUM,20000,gift-store,1 Year
+HR,SILVER,0,honeymoon-packages,Free
+HR,GOLD,25000,honeymoon-packages,6 Month
+HR,GOLD,40000,honeymoon-packages,1 Year
+HR,PLATINUM,40000,honeymoon-packages,6 Month
+HR,PLATINUM,55000,honeymoon-packages,1 Year
+HR,SILVER,0,invitation-card,Free
+HR,GOLD,10000,invitation-card,6 Month
+HR,GOLD,15000,invitation-card,1 Year
+HR,PLATINUM,15000,invitation-card,6 Month
+HR,PLATINUM,20000,invitation-card,1 Year
+HR,SILVER,0,jewellery-and-accessories,Free
+HR,GOLD,10000,jewellery-and-accessories,6 Month
+HR,GOLD,15000,jewellery-and-accessories,1 Year
+HR,PLATINUM,15000,jewellery-and-accessories,6 Month
+HR,PLATINUM,20000,jewellery-and-accessories,1 Year
+HR,SILVER,0,live-performer-entertainer,Free
+HR,GOLD,5000,live-performer-entertainer,6 Month
+HR,GOLD,10000,live-performer-entertainer,1 Year
+HR,PLATINUM,10000,live-performer-entertainer,6 Month
+HR,PLATINUM,15000,live-performer-entertainer,1 Year
+HR,SILVER,0,makeup-artist,Free
+HR,GOLD,20000,makeup-artist,6 Month
+HR,GOLD,35000,makeup-artist,1 Year
+HR,PLATINUM,35000,makeup-artist,6 Month
+HR,PLATINUM,50000,makeup-artist,1 Year
+HR,SILVER,0,mehendi-artist,Free
+HR,GOLD,10000,mehendi-artist,6 Month
+HR,GOLD,15000,mehendi-artist,1 Year
+HR,PLATINUM,15000,mehendi-artist,6 Month
+HR,PLATINUM,20000,mehendi-artist,1 Year
+HR,SILVER,0,photographer-videographer,Free
+HR,GOLD,25000,photographer-videographer,6 Month
+HR,GOLD,40000,photographer-videographer,1 Year
+HR,PLATINUM,40000,photographer-videographer,6 Month
+HR,PLATINUM,55000,photographer-videographer,1 Year
+HR,SILVER,0,security-and-bouncer,Free
+HR,GOLD,5000,security-and-bouncer,6 Month
+HR,GOLD,10000,security-and-bouncer,1 Year
+HR,PLATINUM,10000,security-and-bouncer,6 Month
+HR,PLATINUM,15000,security-and-bouncer,1 Year
+HR,SILVER,0,venues,Free
+HR,GOLD,40000,venues,6 Month
+HR,GOLD,60000,venues,1 Year
+HR,PLATINUM,60000,venues,6 Month
+HR,PLATINUM,80000,venues,1 Year
+HR,SILVER,0,wedding-doli,Free
+HR,GOLD,5000,wedding-doli,6 Month
+HR,GOLD,10000,wedding-doli,1 Year
+HR,PLATINUM,10000,wedding-doli,6 Month
+HR,PLATINUM,15000,wedding-doli,1 Year
