@@ -1,0 +1,7 @@
+# host: _allday_dev_server
+env: 'stage'
+aws_region: "ap-south-1"
+aws_target_group: "oppvenuz-stage-api-tg"
+service_container_name: "oppvenuz-stage-api"
+nginx_container_published_port: "8080"
+host_container_published_port: "8000"

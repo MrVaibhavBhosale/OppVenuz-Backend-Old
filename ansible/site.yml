@@ -1,0 +1,122 @@
+- hosts: all
+  serial: 1
+  pre_tasks:
+  - name: List all EC2 instances
+    amazon.aws.ec2_metadata_facts:
+    register: result
+  # - debug:
+  #     var: result.ansible_facts.ansible_ec2_instance_id
+
+  - name: Deregister a target from a target group
+    community.aws.elb_target:
+      target_group_name: "{{ aws_target_group }}"
+      target_id: "{{result.ansible_facts.ansible_ec2_instance_id}}"
+      state: absent
+      target_status: unused
+      target_status_timeout: 600
+    register: result
+    delegate_to: localhost
+    become: False
+
+  - name: target was deregistered
+    assert:
+        that:
+        - result.changed
+    ignore_errors: true
+    delegate_to: localhost
+    
+  tasks:
+  - name: 'ECR docker login'
+    shell: "aws ecr get-login-password  --region {{ aws_region }}  | docker login --username AWS --password-stdin {{ registry_url }} "
+ 
+  - name: "Copy environment file to server"
+    copy:
+      src: "files/env"
+      dest: "/tmp/env_{{env}}"
+
+  - name: create logging directory
+    file: 
+      state: directory
+      path: "{{item}}"
+    loop:
+    - "/var/log/{{service_container_name}}"
+    - "/var/log/nginx_{{service_container_name}}"
+    - "/vol/web/static/{{env}}"
+
+  - name: "Migrate"
+    docker_container:
+       name: "migrate"
+       image: "{{service_image_name}}"
+       restart_policy: 'no'
+       detach: false
+       env_file: "/tmp/env_{{env}}"
+       command: "manage.py migrate"
+    register: docker_container_output
+
+  - name: Show migrate output
+    debug:
+        msg: "{{ docker_container_output.container.Output }}"
+
+  - name: "collectstatic "
+    docker_container:
+       name: "staticfiles"
+       image: "{{service_image_name}}"
+       restart_policy: 'no'
+       detach: false
+       env_file: "/tmp/env_{{env}}"
+       command: "manage.py collectstatic  --noinput"
+       volumes: 
+       - "/vol/web/static/{{env}}:/vol/web/static"
+    register: staticfiles_container_output
+
+  - name: Show staticfiles output
+    debug:
+        msg: "{{ staticfiles_container_output.container.Output }}"
+
+  - name: "launch {{service_container_name}} container"
+    docker_container:
+       name: "{{service_container_name}}"
+       image: "{{service_image_name}}"
+       state: started
+       restart_policy: always
+       volumes: "/var/log/{{service_container_name}}:/var/log"
+       env_file: "/tmp/env_{{env}}"
+
+  - name: "launch nginx "
+    docker_container:
+       name: "nginx_{{service_container_name}}"
+       image: "mindbowser/nginx:python"
+       state: started
+       restart_policy: always
+       links:
+       - "{{service_container_name}}:api"
+       volumes: "/vol/web/static/{{env}}:/vol/static"
+       ports:
+       - "{{host_container_published_port}}:{{nginx_container_published_port}}"
+    
+  post_tasks:
+  - name: List all EC2 instances
+    amazon.aws.ec2_metadata_facts:
+    register: result
+
+  - name: register an instance to used target group and wait until healthy again 
+    elb_target:
+      target_group_name: "{{ aws_target_group }}"
+      target_id: "{{result.ansible_facts.ansible_ec2_instance_id}}"
+      state: present
+      target_status: healthy
+      target_status_timeout: 1200   
+    register: result
+    delegate_to: localhost
+    become: False
+
+  - name: target is registered
+    assert:
+      that:
+      - result.changed
+      - result.target_group_arn
+      # - "'{{ result.target_health_descriptions.target.id }}' == '{{ instance_id }}'"
+      - "{{ result.target_health_descriptions.target_health }} == {'state': 'healthy'}"
+    delegate_to: localhost
+    become: False
+    ignore_errors: true

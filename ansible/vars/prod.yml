@@ -1,0 +1,9 @@
+# host: _allday_prod_server
+env: 'prod'
+aws_region: "ap-south-1"
+aws_target_group: "oppvenuz-prod-prod-api-tg"
+service_container_name: "oppvenuz-prod-api"
+nginx_container_published_port: "8080"
+host_container_published_port: "8000"
+
+

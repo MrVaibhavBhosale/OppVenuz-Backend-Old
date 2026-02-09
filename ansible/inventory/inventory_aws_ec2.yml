@@ -1,0 +1,10 @@
+plugin: aws_ec2
+regions:
+  - "ap-south-1"
+filters:
+  tag:Environment: replace-me
+  tag:Project: oppvenuz-backend-api
+  instance-state-name : running
+compose:
+  ansible_host: private_dns_name
+  #ansible_host: public_ip_address
